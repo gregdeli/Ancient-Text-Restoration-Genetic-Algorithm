@@ -79,22 +79,23 @@ def fitness(ga_instance, solution, solution_idx):
 
 
 # Parameters
-num_generations = 500
+num_generations = 1000
 population_size = 200
 num_genes = 2
 num_parents_mating = 5
 mutation_probability = 0.01
-crossover_probability = 0.6
+crossover_probability = 0.1
 
 # Define the gene space: integers between 1 and 1678
 high = len(text_vocab) - 1
 gene_space = {"low": 0, "high": high, "step": 1}
 
 # Specify the selection technique
-parent_selection_type = "rws"  # Use "rws", "rank" or "tournament"
+parent_selection_type = "tournament"  # Use "rws", "rank" or "tournament"
+
 
 # Specify the crossover technique
-crossover_type = "single_point"  # Use "single_point", "two_points" or "uniform"
+crossover_type = "uniform"  # Use "single_point", "two_points" or "uniform"
 
 # Create an array of size num_generations to store the best fitness score of each generation from each execution
 best_fitness_per_generation = [0] * num_generations
